@@ -52,6 +52,7 @@ class TeamsController < ApplicationController
     if current_user == @team.owner
       @team.owner = User.find(params[:user_id])
       @team.save
+      ChangeOwnerMailer.change_owner_mail(@team).deliver
       redirect_to @team, notice: 'リーダーを変更しました！'
     end
   end
