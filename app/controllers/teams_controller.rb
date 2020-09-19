@@ -58,8 +58,6 @@ class TeamsController < ApplicationController
   end
 
   def owner?
-    unless current_user == @team.owner
-      redirect_to @team, notice: '権限がありません！'
-    end
+    redirect_to @team, notice: '権限がありません！' unless current_user == @team.owner
   end
 end
