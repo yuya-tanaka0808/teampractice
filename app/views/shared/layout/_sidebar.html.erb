@@ -34,6 +34,7 @@
               <i class="fa fa-circle-o nav-icon"></i>
               <p>
                 <%= agenda.title %>
+                <object><%= link_to I18n.t('views.button.delete'), agenda_path(agenda.id), method: :delete, class: 'btn btn-sm btn-danger' %></object>
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
